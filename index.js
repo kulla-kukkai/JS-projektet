@@ -5,6 +5,7 @@ const quizScreen = document.getElementById("quizScreen");
 const questionBox = document.getElementById("questionBox");
 const nextBtn = document.getElementById("nextBtn");
 const resultScreen = document.getElementById("resultScreen");
+const playAgainBtn = document.getElementById("playAgainBtn");
 
 const questions = [
     {type: "tf",q: "Jul firas i december.", answer: "Sant"},
@@ -149,10 +150,12 @@ function saveAnswer() {
     });
 }
 
-
 function showResult() {
     quizScreen.classList.add("hidden");
     resultScreen.classList.remove("hidden");
+
+    // Rensa resultatskärmen för ny visning
+    resultScreen.innerHTML = "";
 
     //  Räkna rätt svar
     let correctCount = 0;
@@ -175,12 +178,14 @@ function showResult() {
     const total = questions.length;
     const percent = Math.round((correctCount / total) * 100);
 
-    // Visa resultatöversikt
-    resultScreen.innerHTML = `
+    // Skapa resultatinfo
+    const resultInfo = document.createElement("div");
+    resultInfo.innerHTML = `
         <h2>Resultat</h2>
         <p>Du fick <strong>${correctCount}</strong> av <strong>${total}</strong> rätt.</p>
         <p>Procent: <strong>${percent}%</strong></p>
     `;
+    resultScreen.append(resultInfo);
 
     let message = ""; // resultatmeddelande 
     let color = ""; // färg för meddelandet 
@@ -243,6 +248,9 @@ function showResult() {
     });
 
     resultScreen.append(feedbackDiv);
+
+    resultScreen.append(playAgainBtn);
+    playAgainBtn.classList.remove("hidden");
     console.log("Final userAnswer array:", userAnswer);
 }
 
@@ -254,3 +262,12 @@ function formatAnswer(ans) {
     return ans || "(inget svar)";
 }
 
+playAgainBtn.addEventListener("click", function () {
+    index = 0;
+    userAnswer = [];
+
+    resultScreen.classList.add("hidden");
+    playAgainBtn.classList.add("hidden");
+
+    startScreen.classList.remove("hidden");
+});

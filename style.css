@@ -86,3 +86,23 @@ h1 {
     transform: translateY(-5px);
 }
 
+#playAgainBtn {
+    font-family: 'VT323';
+    font-size: 25px;
+    width: 150px;
+    height: 50px;
+    background-color: rgb(187, 0, 0);
+    color: beige;
+    border: solid black 3px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 3px rgb(20, 20, 20);
+    margin: 20px auto;
+    display: block;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+#playAgainBtn:hover {
+    background-color: rgb(6, 74, 10);
+    transform: translateY(-5px);
+}
