@@ -98,8 +98,7 @@ h1 {
 }
 
 #startBtn:hover,
-#nextBtn:hover,
-#playAgainBtn:hover {
+#nextBtn:hover{
     background-color: rgb(6, 74, 10);
     transform: translateY(-5px)
 }
