@@ -1,0 +1,88 @@
+html {
+    background-color: #D7554a;
+    font-family: 'VT323', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 28px;
+    transition: 220ms ease, color 220ms ease;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100vh;
+    margin: 0;
+}
+
+i {
+    font-size: 70px;
+    cursor: pointer;
+    color: beige;
+    position: absolute;
+    top: 10%;
+    left: 90%;
+    transform: translate(-50%, -50%);
+}
+
+h1 {
+    font-family: 'Pixelify Sans','Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #ffffffff;
+    font-size: 50px;
+    text-shadow: 3px 3px 5px rgb(36, 0, 0);
+}
+.quiz-box{
+    background-color: rgb(251, 195, 195);
+    border: 8px ridge rgb(69, 3, 3);
+    border-radius: 10px;
+    width: 500px;
+    height: 250px;
+    box-shadow: 3px 3px 2px rgb(20, 20, 20);
+}
+
+#resultScreen {
+    background-color: rgb(251, 195, 195);
+    border: 8px ridge rgb(69, 3, 3);
+    border-radius: 10px;
+    width: 500px;
+    box-shadow: 3px 3px 2px rgb(20, 20, 20);
+}
+
+
+.hidden {
+    display: none;
+}
+#startBtn {
+    font-family: 'VT323', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 60px;
+    background-color: rgb(187, 0, 0);
+    color: beige;
+    border: none;
+    border-radius: 5px;
+    width: 300px;
+    height: 80px;
+    box-shadow: 2px 2px 2px rgb(36, 0, 0);
+    transition: all 0.2s ease;
+}
+
+.nav-btn {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#nextBtn {
+    font-family: 'VT323', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 25px;
+    width: 80px;
+    height: 40px;
+    background-color: rgb(187, 0, 0);
+    color: beige;
+    border: solid black 3px;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+    box-shadow: 5px 5px 3px rgb(20, 20, 20);
+}
+
+#nextBtn:hover, #startBtn:hover {
+    background-color: rgb(6, 74, 10);
+    transform: translateY(-5px);
+}
+
