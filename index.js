@@ -205,7 +205,7 @@ function showResult() {
     resultTitle.textContent = message; //valuen från ovan kommer visas inuti här 
     resultTitle.style.color = color; 
     resultTitle.style.fontSize = "28px";
-    resultTitle.style.marginLeft = "195px";
+    resultTitle.style.marginLeft = "10px";
     resultScreen.append(resultTitle);
 
     // Detaljerad feedback för varje fråga
