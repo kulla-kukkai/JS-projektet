@@ -9,11 +9,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const title = document.getElementById("quizTitle");
 
     toggle.addEventListener("click", function () {
-        // to toggle icon
+        // toggle icons
         this.classList.toggle("bi-moon-stars-fill");
         this.classList.toggle("bi-brightness-high-fill");
 
-        // to check the Light mode 
+        // om det är light mode nu?
         const isLight = this.classList.contains("bi-brightness-high-fill");
 
         if (isLight) {

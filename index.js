@@ -22,7 +22,7 @@ const questions = [
 let index = 0; // vilken fråga vi är på
 let userAnswer = [];   // poäng
 
-// Starta quiz but hide quiz screen and result screen
+// startknapp > visa quiz-skärm och första frågan
 startBtn.addEventListener('click', function () {
     startScreen.classList.add('hidden');
     quizScreen.classList.remove('hidden');
@@ -32,7 +32,7 @@ startBtn.addEventListener('click', function () {
 
 // Nästa-knapp > spara svar och visa nästa fråga tills slutet kommer vis resultat
 nextBtn.addEventListener('click', function () {
-    // CHECK if the user has answered the current question
+    //  kolla att ett svar är valt
     const group = 'answer-' + index;
     const currentQuestion = questions[index];
 
@@ -50,7 +50,7 @@ nextBtn.addEventListener('click', function () {
 
     if (!hasAnswered) {
         alert("Hoppsan vad snabb du är men GLÖMDE svara! Prova igen!! 😉");
-        return; // stop next
+        return; // stoppa här om inget svar
     }
     saveAnswer();
     index++;
@@ -154,7 +154,7 @@ function showResult() {
     quizScreen.classList.add("hidden");
     resultScreen.classList.remove("hidden");
 
-    // Count correct answers
+    //  Räkna rätt svar
     let correctCount = 0;
 
     userAnswer.forEach(ans => {
@@ -175,7 +175,7 @@ function showResult() {
     const total = questions.length;
     const percent = Math.round((correctCount / total) * 100);
 
-    // render header
+    // Visa resultatöversikt
     resultScreen.innerHTML = `
         <h2>Resultat</h2>
         <p>Du fick <strong>${correctCount}</strong> av <strong>${total}</strong> rätt.</p>
@@ -203,7 +203,7 @@ function showResult() {
     resultTitle.style.marginLeft = "195px";
     resultScreen.append(resultTitle);
 
-    // Show feedback for each question
+    // Detaljerad feedback för varje fråga
     const feedbackDiv = document.createElement("div"); // container för feedback boxes
     feedbackDiv.style.padding = "10px";
     feedbackDiv.style.marginTop = "5px";
@@ -222,7 +222,7 @@ function showResult() {
                 ans.correct.every(a => u.includes(a));
         }
 
-        // Create feedback box for this question
+        // skapa feedback box
         const feedbackBox = document.createElement("div");
         feedbackBox.style.border = isCorrect ? "2px solid green" : "2px solid red";
         feedbackBox.style.padding = "5px";
@@ -246,7 +246,7 @@ function showResult() {
     console.log("Final userAnswer array:", userAnswer);
 }
 
-// Helper to format answer display (string or array)
+// Formatera svar för visning
 function formatAnswer(ans) {
     if (Array.isArray(ans)) {
         return ans.join(", "); 
