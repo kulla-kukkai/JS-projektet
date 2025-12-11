@@ -32,6 +32,26 @@ startBtn.addEventListener('click', function () {
 
 // Nästa-knapp > spara svar och visa nästa fråga tills slutet kommer vis resultat
 nextBtn.addEventListener('click', function () {
+    // CHECK if the user has answered the current question
+    const group = 'answer-' + index;
+    const currentQuestion = questions[index];
+
+    let hasAnswered = false;
+
+    if (currentQuestion.type === "tf" || currentQuestion.type === "at") {
+        const checked = document.querySelector(`input[name="${group}"]:checked`);
+        if (checked) hasAnswered = true;
+    }
+
+    if (currentQuestion.type === "vj") {
+        const checks = document.querySelectorAll(`input[name="${group}"]:checked`);
+        if (checks.length > 0) hasAnswered = true;
+    }
+
+    if (!hasAnswered) {
+        alert("Hoppsan vad snabb du är men GLÖMDE svara! Prova igen!! 😉");
+        return; // stop next
+    }
     saveAnswer();
     index++;
     if (index < questions.length) {
@@ -50,7 +70,7 @@ function showQuestion() {
     title.style.marginBottom = "8px";
     title.style.paddingLeft = "30px";
     title.textContent = q.q;
-    questionBox.appendChild(title);
+    questionBox.append(title);
 
     if (q.type === "tf") {
         createRadioOptions(["Sant", "Falskt"]);
@@ -231,6 +251,6 @@ function formatAnswer(ans) {
     if (Array.isArray(ans)) {
         return ans.join(", "); 
     }
-    return ans || "(ingen svar)";
+    return ans || "(inget svar)";
 }
 
