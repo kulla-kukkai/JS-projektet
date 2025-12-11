@@ -28,6 +28,7 @@ startBtn.addEventListener('click', function () {
     startScreen.classList.add('hidden');
     quizScreen.classList.remove('hidden');
     questionBox.classList.remove('hidden');
+    playAgainBtn.classList.add("hidden");
     showQuestion();
 });
 
@@ -60,6 +61,7 @@ nextBtn.addEventListener('click', function () {
     } else {
         showResult();
     }
+    playAgainBtn.classList.add("hidden");
 });
 
 // Visa frågor
