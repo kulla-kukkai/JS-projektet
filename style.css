@@ -97,3 +97,9 @@ h1 {
     cursor: pointer;
 }
 
+#startBtn:hover,
+#nextBtn:hover,
+#playAgainBtn:hover {
+    transform: translateY(-5px)
+}
+
