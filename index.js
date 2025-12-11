@@ -270,4 +270,5 @@ playAgainBtn.addEventListener("click", function () {
     playAgainBtn.classList.add("hidden");
 
     startScreen.classList.remove("hidden");
+    questionBox.innerHTML = ""; // rensa frågerutan och visa start sidan igen
 });
